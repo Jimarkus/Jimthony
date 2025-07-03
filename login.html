@@ -17,8 +17,8 @@
         var password = document.getElementById("pswd").value;
         if (password == confirmPassword) {
              audio.play();
-             setTimeout(3000);
-             window.location="welcome.html";
+             setTimeout(window.location="welcome.html", 3000);
+             
         }
         else{
             alert("Passwords do not match.");
