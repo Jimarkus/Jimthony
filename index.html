@@ -11,13 +11,13 @@
 </form>
 <!--Function to check password the already set password is admin-->
 <script type="text/javascript">
-    var audio = new Audio('audio_file.mp3');
+    var audio = new Audio('access-granted.mp3');
     function checkPswd() {
         var confirmPassword = "admin";
         var password = document.getElementById("pswd").value;
         if (password == confirmPassword) {
              audio.play();
-             setTimeout(window.location="welcome.html", 3000);
+             setTimeout(function() {window.location="welcome.html"}, 3000);
              
         }
         else{
