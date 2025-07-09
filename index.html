@@ -97,7 +97,7 @@ function checkPswd() {
   var upass = passwords[(generateHash(username).toString())];
   if (upass!=undefined && upass[1] == generateHash(password)) {
     audio.play();
-    setTimeout(function() {window.location=("/contestants/" + upass[0])}, 3000);
+    setTimeout(function() {window.location=("/Jimthony/contestants/" + upass[0])}, 3000);
   }
   else{
     alert("Incorrect username or password.");
