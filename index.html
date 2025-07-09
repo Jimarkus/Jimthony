@@ -82,15 +82,15 @@ var audio = new Audio('Jimthony/res/audio/access-granted.mp3');
         var username = document.getElementById("user").value;
   	var password = document.getElementById("pswd").value;
   	var passwords= {
-  	'71': -453543748,
-  	'351905062': ["Archer",-1142945990],
-  	'1702889824': ["Daniel",1640743062],
-  	'-947552537': ["Finn",2089444640],
-  	'-1876903953': ["Gabe",-1476932987],
-  	'-1706302671': ["Gryffyn",-431174238],
-  	'-872824830': ["Landers",259485413],
-  	'-1844716632': ["Michael",526900273],
-  	'-769453420': ["Noah",-685906485],
+  	'71': ["Archer",-453543748,
+  	'351905062': ["Daniel",-1142945990],
+  	'1702889824': ["Finn",1640743062],
+  	'-947552537': ["Gabe",2089444640],
+  	'-1876903953': ["Gryffyn",-1476932987],
+  	'-1706302671': ["Landers",-431174238],
+  	'-872824830': ["Michael",259485413],
+  	'-1844716632': ["Noah",526900273],
+  	'-769453420': ["Tandin",-685906485],
   	'-51234040': ["Wren",-655574293]
 	};
         var upass = passwords[(generateHash(username).toString())];
