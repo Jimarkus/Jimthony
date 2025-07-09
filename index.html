@@ -1,32 +1,106 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login page</title>
-</head>
-<body>
-<center>
-<form>
-    <label for="pswd">Enter your password: </label>
-    <input type="password" id="pswd">
-    <input type="button" value="Submit" onclick="checkPswd();" />
-</form>
-</center>
+<style>
+body {
+    font-family: Georgia, serif;
+    color: #e0ba8b;
+		background-image: url("https://cdn.discordapp.com/attachments/678136662307504128/1390947096143728772/stars2.png?ex=686a1bee&is=6868ca6e&hm=2d00f96b982844f5afeee78ee48652e5029aa8b2e1e6a2203be1e19aae34376a&");
+    filter: hue-rotate(90);
+     
+  }
+	.fade-in-image { animation: fadeIn 5s; }
+    @keyframes fadeIn {
+    0% { opacity: 0; } 
+    100% { opacity: 1; }  
+  }
+  footer {
+  text-align: center;
+  padding: 3px;
+  color: white;
+  }
+#loginbox {
+  padding: 2vw;
+  margin: auto;
+  display: ;
+  background-color: rgba(102, 15, 51,0.2);
+  width: 50vw;
+}
+#loginline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#loginpapa {
+  width: 100vw;
+}
+#logbtn {
+  align: center;
+}
+</style>
 
-    <!--Function to check password the already set password is admin-->
-<script type="text/javascript">
-    var audio = new Audio('Jimthony/res/audio/access-granted.mp3');
+
+<h1>JIMTHONYS REALM</h1>
+<p>A sequel to the successor of the prequel!</p>
+<p>Enter your login details below (on your physical invite)</p>
+<p>Let push <strong>Run</strong> button to render HTML/CSS and execute script.</p>
+<div id="loginpapa">
+  <div id="loginbox">
+    <form>
+        <div id="loginline">
+          <label for="user">Enter your username: </label>
+          <input type="username" id="user"> <br>
+        </div>
+        <div id="loginline">
+          <label for="pswd">Enter your password: </label>
+          <input type="password" id="pswd"> <br>
+        </div>
+        <input id="logbtn" type="button" value="Submit" onclick="checkPswd();" />
+    </form>
+  </div>
+</div>
+<div class="fade-in-image">
+   <img src="https://cdn.discordapp.com/attachments/958655398745866281/1390282113416429708/kanegif.gif?ex=6867b09e&is=68665f1e&hm=0572906f16121dd60a93a48313f297e6db45d0a51f3b89aa4aeb7a082e61ecea&">
+</div>
+<footer>
+  <img src="https://i.imgur.com/jUFmv7b.gif">
+</footer>
+
+<script>
+// You can use the console window at the bottom
+var h1 = document.querySelector('h1');
+console.log(h1.textContent);
+const generateHash = (string) => {
+  let hash = 0;
+  for (const char of string) {
+    hash = (hash << 5) - hash + char.charCodeAt(0);
+    hash |= 0; // Constrain to 32bit integer
+  }
+  return hash;
+};
+
+
+var audio = new Audio('Jimthony/res/audio/access-granted.mp3');
     function checkPswd() {
         var confirmPassword = "admin";
-        var password = document.getElementById("pswd").value;
-        if (password == confirmPassword) {
+        var username = document.getElementById("user").value;
+  	var password = document.getElementById("pswd").value;
+  	var passwords= {
+  	'71': -453543748,
+  	'351905062': ["Archer",-1142945990],
+  	'1702889824': ["Daniel",1640743062],
+  	'-947552537': ["Finn",2089444640],
+  	'-1876903953': ["Gabe",-1476932987],
+  	'-1706302671': ["Gryffyn",-431174238],
+  	'-872824830': ["Landers",259485413],
+  	'-1844716632': ["Michael",526900273],
+  	'-769453420': ["Noah",-685906485],
+  	'-51234040': ["Wren",-655574293]
+	};
+        var upass = passwords[(generateHash(username).toString())];
+        if (upass[1] == generateHash(password)) {
              audio.play();
-             setTimeout(function() {window.location="welcome.html"}, 3000);
+             setTimeout(function() {window.location=("/contestants/"++upass[0])}, 3000);
              
         }
         else{
-            alert("Passwords do not match.");
+            alert((generateHash(username).toString()));
         }
     }
 </script>
-</body>
-</html>
