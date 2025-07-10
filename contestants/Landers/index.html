@@ -1,5 +1,6 @@
 <style>
   /* CSS styles */
+    /* CSS styles */
   body {
     font-family: Georgia, serif;
     color: #e0ba8b;
@@ -81,39 +82,41 @@
     0% { opacity: 100%;  }
     100% { opacity: 0%; bottom: -5vw; }
   }
-  #content {
+  #mcolumns {
+    display:grid;
     grid-template-columns: 2fr 1fr;
   }
   #rightside {
     text-align:right;
   }
-  #dpopup {
+  .dpopup {
     width: 80vw;
     height 50vh;
-    padding: 5%;
-    font-size: calc(15px + (3vw));
-    text-align: center;
-    background: red;
     position: fixed; 
     left: 0; 
     right: 0; 
     top: 18vh;
-    margin: auto; 
+    margin: auto;
+    font-size: calc(15px + (3vw));
+  }
+.window {
+    padding: 5%;
+    text-align: center;
+    background: red;
     background-image: url("https://cdn.discordapp.com/attachments/678136662307504128/1390947096143728772/stars2.png?ex=686eb92e&is=686d67ae&hm=6de8f972a68d48a91af89f16f0ab1d1cb52c7aca03bff7afca00076cd4e57cb1&");
     background-position: top 0px left 0px;
     border: 3px solid #660f33;
     border-radius: 1rem;
     animation: popupbg 90s linear;
     animation-iteration-count: infinite;
-  }
-  
+}
   .spinnygif {
     width: 25vw;
   }
   
   @keyframes popupbg {
     0% { background-position: top 0px left 0px;  }
-    100% { background-position: top 70px left calc(5*343px); }
+    100% { background-position: top 343px left 700px; }
   }
   
   #racism {
@@ -122,9 +125,68 @@
   #sidecomment {
     font-style: italic;
   }
-  #nametag {
-    
+  #contestants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+  #contestants .window {
+    margin: 1vw 1vw;
+  }
+  #nametag {
+    font-size: 3vw;
+  }
+a:link {
+  color: #3b7ec2;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.visited:link {
+  color: #6a60b0;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+a:hover {
+  color: #3056a9;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+a:active {
+  color: #233566;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.visited:hover {
+  color: #3056a9;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.visited:active {
+  color: #233566;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.seen {
+  border-color: #59293d;
+}
+
+#cgifsub {
+  text-align: left;
+  font-size: 2vw;
+}
+
+#cpopupcols {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+#cpopuprightcol {
+  text-align: left;
+  font-size: 2vw;
+}
+}
+#cpopupleftcol {
+  text-align: left;
+  font-size: 2vw;
+}
   .button-20 {
     appearance: button;
     background-color: #660f33; /* primary button color */
@@ -194,11 +256,13 @@
 </head>
 <body>
 <h1 id="welcome">JIMTHONYS REALM</h1>
-<div hidden id="dpopup">
+<div hidden id="dpopup" class="window dpopup">
   <span id="popuptext"> WELCOME, KANE LANDERS </span><br>
+  <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
   <button onclick="closePopup()" class="button-20">close</button>
 </div >
 <div hidden id="content">
+  <div id="mcolumns">
     <div>
       <h3>WHEN IS THIS EVENT</h3>
   26th OF JULY <br>
@@ -222,17 +286,105 @@
    - Physical challenges <br>
    - Food provided (get breakfast before, though!) <br>
    - Bring your invite! <br>
-  <span id="sidecomment"> <br> <br>
+  <span id="sidecomment"> <br> 
     Will this game be fair? <br>
     MAYBE IDK <br>
     Will it be fun? <br>
     MOST DEFINITELY
-  </span> <br><br><br><br><br>
+  </span> <br><br>
     </div>
     <div id="rightside">
-      <span id=nametag>KANE LANDERS</span> <br>
-      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/1390222357481652246/1390932410136395776/0000-01801.gif?ex=686eab80&is=686d5a00&hm=04c697cdb59de8157eb27389e23a072c5bde27f1037a21a38be3afb46841949b&">
+      <div class="window" >
+      <span id=nametag>KANE LANDERS</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        STATS: <br>
+         - voluptuous
+        
+      </div>
     </div>
+  </div>
+  <div hidden id="wtd">
+    <div hidden id="cpopup" class="window dpopup">
+      <span id="cpopuptext"></span><br>
+      <div id="cpopupcols">
+        <div id="cpopupleftcol">
+          <img class="spinnygif" id="cspinnygif" src=""> <br>
+          <span id="cgifsub"></span> <br>
+        </div>
+        <div id="cpopuprightcol">
+          <span id=cstats></span>
+        </div>
+      </div>
+      <button onclick="closeCPopup()" class="button-20">close</button>
+    </div >
+    <div id="contestants"> 
+      <div id="wArcher" class="window" onclick="contestantPopup('Archer')">
+      <span id=nametag>Minortaur07</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        
+        
+      </div>
+      <div id="wDaniel" class="window" onclick="contestantPopup('Daniel')">
+      <span id=nametag>Acidodan</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        
+        
+      </div>
+      <div id="wFinn" class="window" onclick="contestantPopup('Finn')">
+      <span id=nametag>timetoad2002</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        
+        
+      </div>
+      <div id="wGabe" class="window" onclick="contestantPopup('Gabe')">
+      <span id=nametag>GabrielDeLaSalsa02</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        
+        
+      </div>
+      <div id="wGryffyn" class="window" onclick="contestantPopup('Gryffyn')">
+      <span id=nametag>Lisan_Al_Gaib06</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        
+        
+      </div>
+      <div id="wKane" class="window" onclick="contestantPopup('Kane')">
+      <span id=nametag>DaddyLanders03</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        
+        
+      </div>
+      <div id="wMichael" class="window" onclick="contestantPopup('Michael')">
+      <span id=nametag>xX_BigCheese-02_Xx</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        MICHAEL CHEESEMAN <br>
+         Jimthony ID: 4928186
+        
+      </div>
+      <div id="wNoah" class="window" onclick="contestantPopup('Noah')">
+      <span id=nametag>Noerr2k02</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        NOAH MCAULIFFE <br>
+         Jimthony ID: 1156349
+        
+      </div>
+      <div id="wTandin" class="window" onclick="contestantPopup('Tandin')">
+      <span id=nametag>TheChophelator06</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        TANDIN CHOPHEL <br>
+         Jimthony ID: 9110257
+        
+      </div>
+      <div id="wWren" class="window" onclick="contestantPopup('Wren')">
+      <span id=nametag>the_big_fish03</span> <br><br>
+      <img class="spinnygif" src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"> <br>
+        WREN BOULTON <br>
+         Jimthony ID: 4684411
+        
+      </div>
+   </div>
+  </div>
+  <button onclick="switchTab()"  class="button-20">WHAT YOU NEED TO DO</button>
 </div>
 <div id="pbarpapa">Loading: <span id="loadTxt"></span> <div id="pbar"> <div id="pbarfill"> </div></div> </div>
 </body>
@@ -241,8 +393,81 @@
 
 <script>
   // JavaScript
+    // JavaScript
   document.getElementById("loadTxt").addEventListener("animationend", myFunction);
   
+var contestants = {
+  "Archer": {
+    "name"      : "ARCHER TOMLINSON",
+    "username"  : "Minortaur07",
+    "gif"       : "",
+    "JID"       : "5645760",
+    "stats"     : "- Lean and nimble <br/>- Spanning knowledge of media <br/>- Can not legally drink"
+  },
+  "Daniel": {
+    "name"      : "DANIEL CERRITELLI",
+    "username"  : "Acidodan",
+    "gif"       : "",
+    "JID"       : "0110010",
+    "stats"     : "- Knowledge of comic book media <br/>- Photography skills <br/>- Italian <br/>- small build"
+  },
+  "Finn": {
+    "name"      : "FINN MCLUSKY",
+    "username"  : "timetoad2002",
+    "gif"       : "",
+    "JID"       : "0963046",
+    "stats"     : "- Highly competent software engineer <br/>- Encompassing knowledge of all things frogs <br/>- Jeff Bezos shill"
+  },
+  "Gabe": {
+    "name"      : "GABRIEL LEGARBES",
+    "username"  : "GabrielDeLaSalsa02",
+    "gif"       : "",
+    "JID"       : "3741656",
+    "stats"     : "- Unrivaled anime expertise <br/>- JB Hi-fi employee discount <br/>- filipino racial feats’ <br/>- Financially irresponsible"
+  },
+  "Gryffyn": {
+    "name"      : "GRYFFYN UNDERWOOD",
+    "username"  : "Lisan_Al_Gaib06",
+    "gif"       : "",
+    "JID"       : "8831565",
+    "stats"     : "- Strong knowledge of music and movies <br/>- Great dancer <br/>- Easily throwable"
+  },
+  "Kane": {
+    "name"      : "KANE LANDERS",
+    "username"  : "DaddyLanders03",
+    "gif"       : "",
+    "JID"       : "7688715",
+    "stats"     : "- Expertise in animal handling <br/>- Highly skilled in the art of throwing it back <br/>- 4th grade reading level"
+  },
+  "Michael": {
+    "name"      : "MICHAEL CHEESEMAN",
+    "username"  : "xX_BigCheese-02_Xx",
+    "gif"       : "",
+    "JID"       : "4928186",
+    "stats"     : "- Karate black belt <br/>- 6’5 <br/>- can not remember someone's name if his life depended on it"
+  },
+  "Noah": {
+    "name"      : "NOAH MCAULIFFE",
+    "username"  : "Noerr2k02",
+    "gif"       : "",
+    "JID"       : "1156349",
+    "stats"     : "- 100kg bench press <br/>- Warhammer lore <br/>- Lactose intolerance"
+  },
+  "Tandin": {
+    "name"      : "TANDIN CHOPHEL",
+    "username"  : "TheChophelator06",
+    "gif"       : "",
+    "JID"       : "9110257",
+    "stats"     : "- Calisthenic strength <br/>-  <br/>- not a citizen"
+  },
+  "Wren": {
+    "name"      : "WREN BOULTON",
+    "username"  : "the_big_fish03",
+    "gif"       : "",
+    "JID"       : "4684411",
+    "stats"     : "- Great at calisthenics <br/>- Juggling capabilities <br/>- DEI points for being trans <br/>- 5’8"
+  }
+}
   function myFunction() {
     setTimeout(function() {openPopup();}, 1000);
   }
@@ -258,6 +483,31 @@
     const element = document.getElementById('dpopup');
     const element1 = document.getElementById('content');
     element.hidden = true;
-    element1.style.display = "grid";
+    element1.style.display = "block";
+  }
+function switchTab() {
+    const element = document.getElementById('mcolumns');
+    const element1 = document.getElementById('wtd');
+    console.log(element1.style.display);
+    element.style.display = (element.style.display == "none" ? "grid" : "none");
+    element1.style.display = (element.style.display == "none" ? "block" : "none");
+  }"https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"
+
+function contestantPopup(user) {
+    const cpopup = document.getElementById('cpopup');
+    const cname = document.getElementById('cpopuptext');
+    const cgif = document.getElementById('cspinnygif');
+    const cgifsub = document.getElementById('cgifsub');
+    const cstats = document.getElementById('cstats');
+    document.getElementById('w'+user).classList.add("seen");
+    cname.textContent=contestants[user]["name"];
+    cgif.src="https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&";
+    cstats.innerHTML=contestants[user]["stats"];
+    cgifsub.innerHTML=contestants[user]["username"]+" <br/> Jimthony ID: "+contestants[user]["JID"];
+    cpopup.style.display = "block";
+  }
+function closeCPopup() {
+    const element = document.getElementById('cpopup');
+    element.style.display = "none";
   }
 </script>
