@@ -1,0 +1,514 @@
+<style>
+  /* CSS styles */
+  body {
+    font-family: Georgia, serif;
+    color: #e0ba8b;
+    background-image: url("https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/stars1.png");
+       
+  }
+  
+  button {
+    background:#660f33;
+  }
+  
+  h1 {
+    max-width: 65vw;
+  }
+  #pbarpapa {
+    font-size: calc(10px + (.5vw));
+    width: calc(100px + (50vw));
+    max-width: 95vw;
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    bottom: calc(10px + (1vw));
+    overflow:hidden;
+    animation: pbarslide 1s linear 5.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  #pbar {
+    width: 100%;
+    height: calc(25px + (1.5vw));
+    background: #aedba0;
+    margin: auto;
+    margin-top:calc(3px + (.1vw));
+  }
+  #pbarfill { 
+    width: 0%;
+    height: 100%;
+    background: #5cbd4d;
+    animation: pbarfill 5s linear;
+    animation-fill-mode: forwards;
+  }
+  #pbarpapa span::before {
+    
+    content: "Done";
+    animation: pbartext 5s linear;
+  }
+  
+  @keyframes pbarfill {
+    0% { width: 0%; }
+    10% { width: 15%; } 
+    19.999% { width: 15%; }
+    20% { width: 20%; } 
+    25% { width: 25%; }
+    49.999% { width: 25%; }
+    50% { width: 50%; }
+    59.999% { width: 58%; }
+    60% { width: 60%; }
+    62.999% { width: 61%; }
+    63% { width: 63%; }
+    70% { width: 75%; }
+    98% { width: 78%; }
+    100% { width: 100%; }
+  }
+  @keyframes pbartext {
+    0% { content: "Jimthony-utilities"; } 
+    25% { content: "Secrets" }
+    49.999% { content: "Contestant-scan" }
+    50% { content: "bombs" }
+    59.999% { content: "spware" }
+    60% { content: "lubricant" }
+    62.999% { content: "E-Jimmy" }
+    63% { content: "cool-gifs" }
+    70% { content: "The Internet" }
+    98% { content: "a car" }
+    100% { content: "a car" }
+  }
+  @keyframes pbarslide {
+    0% { opacity: 100%;  }
+    100% { opacity: 0%; bottom: -5vw; }
+  }
+  #mcolumns {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  #rightside {
+    text-align:right;
+  }
+  .dpopup {
+    width: 80vw;
+    height 50vh;
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 20;
+    bottom: 20;
+    margin: auto auto;
+    font-size: 4vmin;
+  }
+.window {
+    padding: 2vmin;
+    text-align: center;
+    background: red;
+    background-image: url("https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/stars1.png");
+    background-position: top 0px left 0px;
+    border: 3px solid #660f33;
+    border-radius: 1rem;
+    animation: popupbg 90s linear;
+    animation-iteration-count: infinite;
+}
+  .spinnygif {
+    height: 20vw;
+  }
+  
+  @keyframes popupbg {
+    0% { background-position: top 0px left 0px;  }
+    100% { background-position: top 343px left 700px; }
+  }
+
+  #racism {
+    font-size: 8;
+  }
+  #sidecomment {
+    font-style: italic;
+  }
+  #contestants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+  }
+  #contestants .window {
+    margin: 0;
+  }
+  #nametag {
+    font-size: 3vw;
+  }
+a:link {
+  color: #3b7ec2;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.visited:link {
+  color: #6a60b0;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+a:hover {
+  color: #3056a9;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+a:active {
+  color: #233566;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.visited:hover {
+  color: #3056a9;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.visited:active {
+  color: #233566;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+.seen {
+  border-color: #59293d;
+}
+
+#cgifsub {
+  text-align: left;
+  font-size: 5vmin;
+}
+
+#cpopupleftcol {
+  font-size: 3vw;
+}
+
+#cpopup {
+  font-size: 3vh;
+}
+
+#cspinnygif {
+  height: 40vh;
+  text-align: left;
+}
+#cpopupcols {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  text-align: left;
+  font-size: 50%;
+}
+#cpopupleftcol {
+  font-size: 2vh;
+}
+
+  .button-20 {
+    appearance: button;
+    background-color: #660f33; /* primary button color */
+    background-image: linear-gradient(180deg, rgba(255, 248, 242, 0.15), rgba(255, 248, 242, 0));
+    border: 1px solid #660f33;
+    border-radius: 1rem;
+    box-shadow: rgba(255, 248, 242, 0.15) 0 1px 0 inset, rgba(20, 20, 20, 0.075) 0 1px 1px;
+    box-sizing: border-box;
+    color: #fff8f2; /* text color */
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-transform: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .button-20:focus:not(:focus-visible),
+  .button-20:focus {
+    outline: 0;
+  }
+  
+  .button-20:hover {
+    background-color: #141414;
+    border-color: #141414;
+  }
+  
+  .button-20:focus {s
+    background-color: #141414;
+    border-color: #141414;
+    box-shadow: rgba(255, 248, 242, 0.2) 0 1px 0 inset, rgba(20, 20, 20, 0.1) 0 1px 1px, rgba(224, 186, 139, 0.4) 0 0 0 0.2rem;
+  }
+  
+  .button-20:active {
+    background-color: #1a1a1a;
+    background-image: none;
+    border-color: #1a1a1a;
+    box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset;
+  }
+  
+  .button-20:active:focus {
+    box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset, rgba(224, 186, 139, 0.4) 0 0 0 0.2rem;
+  }
+  
+  .button-20:disabled {
+    background-image: none;
+    box-shadow: none;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+</style>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JIMTHONYS REALM</title>
+</head>
+<body>
+<h1 id="welcome">JIMTHONYS REALM</h1>
+<div hidden id="dpopup" class="window dpopup">
+  <span id="popuptext"> WELCOME, KANE LANDERS </span><br>
+  <img class="spinnygif" src="https://cdn.discordapp.com/attachments/678136662307504128/1394184727266590901/kanegif1.gif?ex=6875e335&is=687491b5&hm=5e0e0f555befbf9db5bb0a126bd561dfd95f1f3e2208ad98a27e733300157f97&"> <br>
+  <button onclick="closePopup()" class="button-20">close</button>
+</div >
+<div hidden id="cpopup" class="window dpopup">
+      <span id="cpopuptext"></span><br>
+      <div id="cpopupcols">
+        <div id="cpopupleftcol">
+          <img class="" id="cspinnygif" src=""> <br>
+          <span id="cgifsub"></span> <br>
+        </div>
+        <div id="cpopuprightcol">
+          <span id=cstats></span>
+        </div>
+      </div>
+      <button onclick="closeCPopup()" class="button-20">close</button>
+    </div>
+<div hidden id="content">
+  <div id="mcolumns">
+    <div>
+      <h3>WHEN IS THIS EVENT</h3>
+  26th OF JULY <br>
+  MARK THE DAY <br>
+  Arrive at 11 AM <br>
+  FINISHING BY 5 (hopefully)
+  <h3>WHERE?</h3>
+   - 40 ARABA STREET <br>
+   - ENTER THROUGH THE MAIN DOOR AND YOU WILL FIND THE WAITING AREA <br>
+   - MAKE YOUR FINAL PREPARATIONS BEFORE YOU ARE TRANSPORTED TO MY REALM
+  <h3>WHAT TO EXPECT</h3>
+   - A chaotic game show (In teams of 2), questions, challenges, minigames, etc <br>
+   - Cameo appearances! <br>
+   - A Jimthony-type event <br>
+   - Betrayal?!?! <br>
+
+   <span id="racism"> <br> - Casual racism (competitive accepted)</span>
+  <h3>IMPORTNAT INFO</h3>
+   - The event WILL be recorded and posted online (if you’re cool with that!) <br>
+   - Wear clothes you look good in but don’t mind getting fucked up <br>
+   - Physical challenges <br>
+   - Food provided (get breakfast before, though!) <br>
+   - Bring your invite! <br>
+  <span id="sidecomment"> <br> 
+    Will this game be fair? <br>
+    MAYBE IDK <br>
+    Will it be fun? <br>
+    MOST DEFINITELY
+  </span> <br><br>
+    </div>
+    <div id="rightside">
+      <div class="window" onclick="contestantPopup('Kane')">
+      <span id=nametag>KANE LANDERS</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Kane/KaneSpinny.webm"> <br>
+        CLICK ON ME
+        
+      </div>
+    </div>
+  </div>
+  <div hidden id="wtd">
+    
+    <div id="contestants"> 
+      <div id="wArcher" class="window" onclick="contestantPopup('Archer')">
+      <span id=nametag>Minortaur07</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Archer/ArcherSpinny.webm"> <br>
+        
+        
+      </div>
+      <div id="wDaniel" class="window" onclick="contestantPopup('Daniel')">
+      <span id=nametag>Acidodan</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Daniel/DanielSpinny.webm"> <br>
+        
+        
+      </div>
+      <div id="wFinn" class="window" onclick="contestantPopup('Finn')">
+      <span id=nametag>timetoad2002</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Finn/FinnSpinny.webm"> <br>
+        
+        
+      </div>
+      <div id="wGabe" class="window" onclick="contestantPopup('Gabe')">
+      <span id=nametag>GabrielDeLaSalsa02</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Gabe/GabeSpinny.webm"> <br>
+        
+        
+      </div>
+      <div id="wGryffyn" class="window" onclick="contestantPopup('Gryffyn')">
+      <span id=nametag>Lisan_Al_Gaib06</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Gryffyn/GryffynSpinny.webm"> <br>
+        
+        
+      </div>
+      <div id="wKane" class="window" onclick="contestantPopup('Kane')">
+      <span id=nametag>DaddyLanders03</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Kane/KaneSpinny.webm"> <br>
+        
+        
+      </div>
+      <div id="wMichael" class="window" onclick="contestantPopup('Michael')">
+      <span id=nametag>xX_BigCheese-02_Xx</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Michael/MichaelSpinny.webm"> <br>
+        
+      </div>
+      <div id="wNoah" class="window" onclick="contestantPopup('Noah')">
+      <span id=nametag>Noerr2k02</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Noah/NoahSpinny.webm"> <br>
+        
+      </div>
+      <div id="wTandin" class="window" onclick="contestantPopup('Tandin')">
+      <span id=nametag>TheChophelator06</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Tandin/TandinSpinny.webm"> <br>
+        
+      </div>
+      <div id="wWren" class="window" onclick="contestantPopup('Wren')">
+      <span id=nametag>the_big_fish03</span> <br><br>
+      <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Wren/WrenSpinny.webm"> <br>
+        
+      </div>
+   </div>
+  </div>
+  <button onclick="switchTab()"  class="button-20">WHAT YOU NEED TO DO</button>
+</div>
+<div id="pbarpapa">Loading: <span id="loadTxt"></span> <div id="pbar"> <div id="pbarfill"> </div></div> </div>
+</body>
+
+
+<script>
+  // JavaScript
+    // JavaScript
+  document.getElementById("loadTxt").addEventListener("animationend", myFunction);
+  
+var contestants = {
+  "Archer": {
+    "name"      : "ARCHER TOMLINSON",
+    "username"  : "Minortaur07",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Archer/ArcherSpinny.webm",
+    "JID"       : "5645760",
+    "stats"     : "- Lean and nimble <br/>- Spanning knowledge of media <br/>- Can not legally drink"
+  },
+  "Daniel": {
+    "name"      : "DANIEL CERRITELLI",
+    "username"  : "Acidodan",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Daniel/DanielSpinny.webm",
+    "JID"       : "0110010",
+    "stats"     : "- Knowledge of comic book media <br/>- Photography skills <br/>- Italian <br/>- small build"
+  },
+  "Finn": {
+    "name"      : "FINN MCLUSKY",
+    "username"  : "timetoad2002",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Finn/FinnSpinny.webm",
+    "JID"       : "0963046",
+    "stats"     : "- Highly competent software engineer <br/>- Encompassing knowledge of all things frogs <br/>- Jeff Bezos shill"
+  },
+  "Gabe": {
+    "name"      : "GABRIEL LEGARBES",
+    "username"  : "GabrielDeLaSalsa02",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Gabe/GabeSpinny.webm",
+    "JID"       : "3741656",
+    "stats"     : "- Unrivaled anime expertise <br/>- JB Hi-fi employee discount <br/>- filipino racial feats’ <br/>- Financially irresponsible"
+  },
+  "Gryffyn": {
+    "name"      : "GRYFFYN UNDERWOOD",
+    "username"  : "Lisan_Al_Gaib06",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Gryffyn/GryffynSpinny.webm",
+    "JID"       : "8831565",
+    "stats"     : "- Strong knowledge of music and movies <br/>- Great dancer <br/>- Easily throwable"
+  },
+  "Kane": {
+    "name"      : "KANE LANDERS",
+    "username"  : "DaddyLanders03",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Kane/KaneSpinny.webm",
+    "JID"       : "7688715",
+    "stats"     : "- Expertise in animal handling <br/>- Highly skilled in the art of throwing it back <br/>- 4th grade reading level"
+  },
+  "Michael": {
+    "name"      : "MICHAEL CHEESEMAN",
+    "username"  : "xX_BigCheese-02_Xx",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Michael/MichaelSpinny.webm",
+    "JID"       : "4928186",
+    "stats"     : "- Karate black belt <br/>- 6’5 <br/>- can not remember someone's name if his life depended on it"
+  },
+  "Noah": {
+    "name"      : "NOAH MCAULIFFE",
+    "username"  : "Noerr2k02",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Noah/NoahSpinny.webm",
+    "JID"       : "1156349",
+    "stats"     : "- 100kg bench press <br/>- Warhammer lore <br/>- Lactose intolerance"
+  },
+  "Tandin": {
+    "name"      : "TANDIN CHOPHEL",
+    "username"  : "TheChophelator06",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Tandin/TandinSpinny.webm",
+    "JID"       : "9110257",
+    "stats"     : "- Calisthenic strength <br/>-  <br/>- not a citizen"
+  },
+  "Wren": {
+    "name"      : "WREN BOULTON",
+    "username"  : "the_big_fish03",
+    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/maincontestants/Wren/WrenSpinny.webm",
+    "JID"       : "4684411",
+    "stats"     : "- Great at calisthenics <br/>- Juggling capabilities <br/>- DEI points for being trans <br/>- 5’8"
+  }
+}
+  function myFunction() {
+    setTimeout(function() {openPopup();}, 1000);
+  }
+  
+  function openPopup() {
+    const element = document.getElementById('dpopup');
+    const element1 = document.getElementById('content');
+    element.hidden = false;
+    element1.style.display = "none";
+  }
+  
+  function closePopup() {
+    const element = document.getElementById('dpopup');
+    const element1 = document.getElementById('content');
+    element.hidden = true;
+    element1.style.display = "block";
+  }
+function switchTab() {
+    const element = document.getElementById('mcolumns');
+    const element1 = document.getElementById('wtd');
+    console.log(element1.style.display);
+    element.style.display = (element.style.display == "none" ? "grid" : "none");
+    element1.style.display = (element.style.display == "none" ? "block" : "none");
+  }"https://cdn.discordapp.com/attachments/958655398745866281/1392698079651696721/kanegif.gif?ex=68707aa9&is=686f2929&hm=b97a09ba21da69bfb0293cc30048e7c76f14b82adda99d220c3567b55f50cbe7&"
+
+function contestantPopup(user) {
+    const cpopup = document.getElementById('cpopup');
+    const cname = document.getElementById('cpopuptext');
+    const cgif = document.getElementById('cspinnygif');
+    const cgifsub = document.getElementById('cgifsub');
+    const cstats = document.getElementById('cstats');
+    document.getElementById('w'+user).classList.add("seen");
+    cname.textContent=contestants[user]["name"];
+    cgif.src=contestants[user]["gif"];
+    cstats.innerHTML=contestants[user]["stats"];
+    cgifsub.innerHTML=contestants[user]["username"]+" <br/> Jimthony ID: "+contestants[user]["JID"];
+    cpopup.style.display = "block";
+  }
+function closeCPopup() {
+    const element = document.getElementById('cpopup');
+    element.style.display = "none";
+  }
+</script>
