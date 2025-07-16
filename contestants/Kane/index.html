@@ -112,6 +112,7 @@
 }
   .spinnygif {
     height: 20vw;
+    aspect-ratio: 720/1080;
   }
   
   @keyframes popupbg {
@@ -172,20 +173,22 @@ a:active {
 
 #cgifsub {
   text-align: left;
-  font-size: 5vmin;
+  font-size: 3vmin;
 }
 
 #cpopup {
   font-size: 3vh;
+  z-index: 40;
 }
-
+#cjid {
+  font-size: 2vmin;
+}
 #cspinnygif {
-  height: 40vh;
-  text-align: left;
+  height: 40vmin;
 }
 #cpopupcols {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   text-align: left;
   font-size: 50%;
 }
@@ -267,15 +270,15 @@ a:active {
 <h1 id="welcome">JIMTHONYS REALM</h1>
 <div hidden id="dpopup" class="window dpopup">
   <span id="popuptext"> WELCOME, KANE LANDERS </span><br>
-  <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> </video> <br>
+  <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
   <button onclick="closePopup()" class="button-20">close</button>
 </div >
 <div hidden id="cpopup" class="window dpopup">
       <span id="cpopuptext"></span><br>
       <div id="cpopupcols">
         <div id="cpopupleftcol">
-           <video autoplay loop muted inline id="cspinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm"> <br>
-          <span id="cgifsub"></span> <br>
+          <video autoplay disablePictureInPicture loop muted inline id="cspinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
+          <span id="cgifsub"></span> <br> <br> <span id="cjid"></span>
         </div>
         <div id="cpopuprightcol">
           <span id=cstats></span>
@@ -314,91 +317,90 @@ a:active {
     Will it be fun? <br>
     MOST DEFINITELY
   </span> <br><br>
-      <button onclick="switchTab()"  class="button-20">YOUR NEXT STEPS</button>
+  <button onclick="switchTab()"  class="button-20">YOUR NEXT STEPS</button>
     </div>
     <div id="rightside">
       <div class="window" onclick="contestantPopup('Kane')">
       <span id=nametag>KANE LANDERS</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
         CLICK ON ME
         
       </div>
     </div>
   </div>
-  <div hidden id="wtd">
+  <diiv hidden id="wtd">
     <h3>YOUR NEXT STEPS</h3>
    - Pick your team mate <br>
-   <p>&nbsp;&nbsp;&nbsp;&nbsp;Find each contestant below, click on them for more info</p>
+   &nbsp;&nbsp;&nbsp;&nbsp;Find each contestant below, click on them for more info
    - Join the group chat <br>
    - Announce your team (no need to have a name worked out yet!) <br>
    - Follow the next steps in the group chat! <br>
    - Arrive at 11AM on the day! ( DO NOT BE LATE ) <br>
-    <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/coolest-thing-to-grace-earth.gif">
     <div id="contestants"> 
       <div id="wArcher" class="window" onclick="contestantPopup('Archer')">
       <span id=nametag>Minortaur07</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm"> <br>
         
         
       </div>
       <div id="wDaniel" class="window" onclick="contestantPopup('Daniel')">
       <span id=nametag>Acidodan</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Daniel.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Daniel.webm"> <br>
         
         
       </div>
       <div id="wFinn" class="window" onclick="contestantPopup('Finn')">
       <span id=nametag>timetoad2002</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Finn.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Finn.webm"> <br>
         
         
       </div>
       <div id="wGabe" class="window" onclick="contestantPopup('Gabe')">
       <span id=nametag>GabrielDeLaSalsa02</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gabe.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gabe.webm"> <br>
         
         
       </div>
       <div id="wGryffyn" class="window" onclick="contestantPopup('Gryffyn')">
       <span id=nametag>Lisan_Al_Gaib06</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gryffyn.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gryffyn.webm"> <br>
         
         
       </div>
       <div id="wKane" class="window" onclick="contestantPopup('Kane')">
       <span id=nametag>DaddyLanders03</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> <br>
         
         
       </div>
       <div id="wMichael" class="window" onclick="contestantPopup('Michael')">
       <span id=nametag>xX_BigCheese-02_Xx</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Michael.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Michael.webm"> <br>
         
       </div>
       <div id="wNoah" class="window" onclick="contestantPopup('Noah')">
       <span id=nametag>Noerr2k02</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Noah.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Noah.webm"> <br>
         
       </div>
       <div id="wTandin" class="window" onclick="contestantPopup('Tandin')">
       <span id=nametag>TheChophelator06</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Tandin.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Tandin.webm"> <br>
         
       </div>
       <div id="wWren" class="window" onclick="contestantPopup('Wren')">
       <span id=nametag>the_big_fish03</span> <br><br>
-      <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Wren.webm"> <br>
+      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Wren.webm"> <br>
         
       </div>
    </div>
     <button onclick="switchTab()"  class="button-20">Back</button>
+    <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/coolest-thing-to-grace-earth.gif">
   </div>
-  
 </div>
 <div id="pbarpapa">Loading: <span id="loadTxt"></span> <div id="pbar"> <div id="pbarfill"> </div></div> </div>
 </body>
-
+</html>
 
 <script>
   // JavaScript
@@ -506,12 +508,14 @@ function contestantPopup(user) {
     const cname = document.getElementById('cpopuptext');
     const cgif = document.getElementById('cspinnygif');
     const cgifsub = document.getElementById('cgifsub');
+    const cjid = document.getElementById('cjid');
     const cstats = document.getElementById('cstats');
     document.getElementById('w'+user).classList.add("seen");
     cname.textContent=contestants[user]["name"];
     cgif.src=contestants[user]["gif"];
     cstats.innerHTML=contestants[user]["stats"];
-    cgifsub.innerHTML=contestants[user]["username"]+" <br/> Jimthony ID: "+contestants[user]["JID"];
+    cgifsub.innerHTML=contestants[user]["username"];
+    cjid.innerHTML="Jimthony ID: "+contestants[user]["JID"];
     cpopup.style.display = "block";
   }
 function closeCPopup() {
