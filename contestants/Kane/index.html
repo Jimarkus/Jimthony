@@ -267,7 +267,7 @@ a:active {
 <h1 id="welcome">JIMTHONYS REALM</h1>
 <div hidden id="dpopup" class="window dpopup">
   <span id="popuptext"> WELCOME, KANE LANDERS </span><br>
-  <img class="spinnygif" src="https://cdn.discordapp.com/attachments/678136662307504128/1394184727266590901/kanegif1.gif?ex=6875e335&is=687491b5&hm=5e0e0f555befbf9db5bb0a126bd561dfd95f1f3e2208ad98a27e733300157f97&"> <br>
+  <video autoplay loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> <br>
   <button onclick="closePopup()" class="button-20">close</button>
 </div >
 <div hidden id="cpopup" class="window dpopup">
@@ -314,6 +314,7 @@ a:active {
     Will it be fun? <br>
     MOST DEFINITELY
   </span> <br><br>
+      <button onclick="switchTab()"  class="button-20">YOUR NEXT STEPS</button>
     </div>
     <div id="rightside">
       <div class="window" onclick="contestantPopup('Kane')">
@@ -325,7 +326,14 @@ a:active {
     </div>
   </div>
   <div hidden id="wtd">
-    
+    <h3>YOUR NEXT STEPS</h3>
+   - Pick your team mate <br>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;Find each contestant below, click on them for more info</p>
+   - Join the group chat <br>
+   - Announce your team (no need to have a name worked out yet!) <br>
+   - Follow the next steps in the group chat! <br>
+   - Arrive at 11AM on the day! ( DO NOT BE LATE ) <br>
+    <img class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/coolest-thing-to-grace-earth.gif">
     <div id="contestants"> 
       <div id="wArcher" class="window" onclick="contestantPopup('Archer')">
       <span id=nametag>Minortaur07</span> <br><br>
@@ -384,8 +392,9 @@ a:active {
         
       </div>
    </div>
+    <button onclick="switchTab()"  class="button-20">Back</button>
   </div>
-  <button onclick="switchTab()"  class="button-20">WHAT YOU NEED TO DO</button>
+  
 </div>
 <div id="pbarpapa">Loading: <span id="loadTxt"></span> <div id="pbar"> <div id="pbarfill"> </div></div> </div>
 </body>
