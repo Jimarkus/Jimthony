@@ -83,17 +83,17 @@ function checkPswd() {
   var username = document.getElementById("user").value;
   var password = document.getElementById("pswd").value;
   var passwords= {
-  	'351905062'	: ["Archer",	-1142945990],
-  	'1702889824'	: ["Daniel",	1640743062],
-  	'-947552537'	: ["Finn",	2089444640],
-  	'-1876903953'	: ["Gabe",	-1476932987],
-  	'-1706302671'	: ["Gryffyn",	-431174238],
-  	'-872824830'	: ["Kane",	259485413],
-  	'-1844716632'	: ["Michael",	526900273],
-    	'71'		: ["Noah",	-453543748],
-  	'-769453420'	: ["Tandin",	-685906485],
-  	'-51234040'	: ["Wren",	-655574293]
-  };
+  '351905062': [ 'Archer', -1142945990 ],
+  '1702889824': [ 'Daniel', -1171277223 ],
+  '2013438756': [ 'Wren', -655574293 ],
+  '-1114901653': [ 'Finn', 2089444640 ],
+  '-182117524': [ 'Gabe', 1113992566 ],
+  '-1896073103': [ 'Gryffyn', 1123051289 ],
+  '-872824830': [ 'Kane', 259485413 ],
+  '-1844716632': [ 'Michael', 526900273 ],
+  '-549918689': [ 'Noah', -974612197 ],
+  '-769453420': [ 'Tandin', 1614348423 ]
+};
   var upass = passwords[(generateHash(username).toString())];
   if (upass!=undefined && upass[1] == generateHash(password)) {
     audio.play();
