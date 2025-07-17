@@ -198,7 +198,17 @@ a:active {
 #cpopuprightcol {
   font-size: 2vmin;
 }
-
+.flashy {
+  animation: flash 1s infinite;
+}
+@keyframes flash {
+      0%, 100% {
+        color: red;
+      }
+      50% {
+        color: blue;
+      }
+    }
   .button-20 {
     appearance: button;
     background-color: #660f33; /* primary button color */
@@ -335,7 +345,7 @@ a:active {
    - Join the group chat <br>
    - Announce your team (no need to have a name worked out yet!) <br>
    - Follow the next steps in the group chat! <br>
-   - Arrive at 11AM on the day! ( DO NOT BE LATE ) <br>
+   - Arrive at 11AM on the day! <span class="flashy" >( DO NOT BE LATE )</span> <br>
     <div id="contestants"> 
       <div id="wArcher" class="window" onclick="contestantPopup('Archer')">
       <span id=nametag>Minortaur07</span> <br><br>
