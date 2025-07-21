@@ -564,9 +564,10 @@ var contestants = {
     "stats"     : "<span class='good'> 🡅 </span> Juggling capabilities <br/><span class='good'> 🡅 </span> DEI points for being trans <br/><span class='ass'> 🡇 </span> Dwarf physiognomy"
   }
 }
+  var audio = new Audio('https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/audio/welcomes/welcome kane landers.wav');
   function myFunction() {
     const element = document.getElementById('pbarpapa');
-    setTimeout(function() {openPopup(); element.hidden = true;}, 1000);
+    setTimeout(function() {openPopup(); element.hidden = true; audio.play();}, 1000);
     
   }
   
