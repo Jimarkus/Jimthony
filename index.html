@@ -1,15 +1,55 @@
 <style>
+@font-face {
+font-family: 'Jimth';
+src: url('https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/fonts/Hanson-Bold.ttf') format('truetype');
+}
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between images */
+}
+
+.footer-content li {
+  display: flex;
+  align-items: center;
+}
 body {
-    font-family: Georgia, serif;
-    color: #e0ba8b;
-		background-image: url("https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/stars3.png");
-     
+    font-family: 'comic sans MS', Georgia, serif;
+    text-align: center;
+    color: #ffcead;
+    background-image: url("https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/stars3.png");
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Jimth', Georgia, serif;
+    letter-spacing: 2px;
+    color: #f89404; 
   }
+}
 	.fade-in-image { animation: fadeIn 5s; }
     @keyframes fadeIn {
     0% { opacity: 0; } 
     100% { opacity: 1; }  
   }
+.bingle {
+  width: 100%;
+  padding: 0.5vw 1vw;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+.wingle {
+  font-size: 2vw;
+}
   footer {
   text-align: center;
   padding: 3px;
@@ -18,13 +58,12 @@ body {
 #loginbox {
   padding: 2vw;
   margin: auto;
-  display: ;
-  background-color: rgba(102, 15, 51,0.2);
-  width: 50vw;
+  width: 80vw;
 }
 #loginline {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  
 }
 #loginpapa {
   width: 100vw;
@@ -32,6 +71,82 @@ body {
 #logbtn {
   align: center;
 }
+
+.window {
+    padding: 2vh 2vw;
+    text-align: center;
+    background-image: url("https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/stars3.png");
+    background-position: top 0px left 0px;
+    border: 3px solid #660f33;
+    border-radius: 1rem;
+    animation: popupbg 90s linear;
+    animation-iteration-count: infinite;
+}
+@keyframes popupbg {
+    0% { background-position: top 0px left 0px;  }
+    100% { background-position: top 343px left 700px; }
+  }
+
+
+.button-20 {
+    appearance: button;
+    background-color: #660f33; /* primary button color */
+    background-image: linear-gradient(180deg, rgba(255, 248, 242, 0.15), rgba(255, 248, 242, 0));
+    border: 1px solid #660f33;
+    border-radius: 1rem;
+    box-shadow: rgba(255, 248, 242, 0.15) 0 1px 0 inset, rgba(20, 20, 20, 0.075) 0 1px 1px;
+    box-sizing: border-box;
+    color: #fff8f2; /* text color */
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-transform: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .button-20:focus:not(:focus-visible),
+  .button-20:focus {
+    outline: 0;
+  }
+  
+  .button-20:hover {
+    background-color: #141414;
+    border-color: #141414;
+  }
+  
+  .button-20:focus {s
+    background-color: #141414;
+    border-color: #141414;
+    box-shadow: rgba(255, 248, 242, 0.2) 0 1px 0 inset, rgba(20, 20, 20, 0.1) 0 1px 1px, rgba(224, 186, 139, 0.4) 0 0 0 0.2rem;
+  }
+  
+  .button-20:active {
+    background-color: #1a1a1a;
+    background-image: none;
+    border-color: #1a1a1a;
+    box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset;
+  }
+  
+  .button-20:active:focus {
+    box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset, rgba(224, 186, 139, 0.4) 0 0 0 0.2rem;
+  } 
+  
+  .button-20:disabled {
+    background-image: none;
+    box-shadow: none;
+    opacity: 0.65;
+    pointer-events: none;
+  }
 </style>
 
 
@@ -40,30 +155,37 @@ body {
   <p>A sequel to the successor of the prequel!</p>
   <p>Enter your login details below (on your physical invite)</p>
   <div id="loginpapa">
-    <div id="loginbox">
+    <div class="window" id="loginbox">
       <form>
           <div id="loginline">
-            <label for="user">Enter your username: </label>
-            <input type="username" id="user"> <br>
+            <label class="wingle" for="user">Enter your username: </label>
+            <input class="bingle" type="username" id="user"> <br>
           </div>
           <div id="loginline">
-            <label for="pswd">Enter your password: </label>
-            <input type="password" id="pswd"> <br>
+            <label class="wingle" for="pswd">Enter your password: </label>
+            <input class="bingle" type="password" id="pswd"> <br>
           </div>
-          <input id="logbtn" type="button" value="Submit" onclick="checkPswd();" />
+          <input id="logbtn" class="button-20" type="button" value="Submit" onclick="checkPswd();" />
       </form>
     </div>
   </div>
-  <div class="fade-in-image">
-     <img src="https://cdn.discordapp.com/attachments/958655398745866281/1390282113416429708/kanegif.gif?ex=6867b09e&is=68665f1e&hm=0572906f16121dd60a93a48313f297e6db45d0a51f3b89aa4aeb7a082e61ecea&">
-  </div>
+  <br>
 </div>
 <div  hidden id=loadingpage>
   <div id="pbarpapa">Loading: <span id="loadTxt"></span> <div id="pbar"> <div id="pbarfill"> </div></div> </div>
 </div>
 <footer>
-  <img src="https://i.imgur.com/jUFmv7b.gif">
-  
+  <ul class="footer-content">
+    <li class="fade-in-image"><a href="https://www.maninthedark.com/" >
+      <img src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/dlmcafee.gif" alt="Image 1"> </a>
+      <a href="https://spinningrat.online/">
+            <img src="https://i.imgur.com/jUFmv7b.gif" alt="Image 2"></a>
+    </li>
+    <li class="fade-in-image"> <a href="https://epic.horse/" >
+      <img src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/winzip_staticbut_button.gif" alt="Image 1"> </a>
+    </li>
+    <li class="fade-in-image"> <a href="https://rotatingsandwiches.com/"> <img class="" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/guild.gif"></a></li> 
+  </ul>
 </footer>
 
 <script>
