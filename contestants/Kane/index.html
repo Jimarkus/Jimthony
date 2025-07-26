@@ -1,6 +1,6 @@
 <style>
   /* CSS styles */
-  @font-face {
+ @font-face {
 font-family: 'Jimth';
 src: url('https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/fonts/Hanson-Bold.ttf') format('truetype');
 }
@@ -12,19 +12,23 @@ body {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Jimth', Georgia, serif;
     letter-spacing: 2px;
-    font-weight: 900;
     color: #f89404; 
   }
 }
   button {
     background:#660f33;
   }
-  
+#cpopuptext {
+  color: #ffa82e
+}
   h1 {
-    max-width: 65vw;
-    font-size: 6vw;
+    font-size: 8vw;
     text-align: left;
+    line-height: 0.4;
   }
+h3 {
+  font-size: 28px;
+}
   #pbarpapa {
     font-size: calc(10px + (.5vw));
     width: calc(100px + (50vw));
@@ -48,7 +52,7 @@ body {
     margin-top:calc(3px + (.1vw));
   }
 #rcontestant {
-    width: 100%;
+    width: 18vw;
     aspect-ratio:3/2;
   }
   #pbarfill { 
@@ -63,7 +67,14 @@ body {
     content: "Done";
     animation: pbartext 5s linear;
   }
-  
+.flippa {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.jimthonycode, .skelly {
+	width: 10vw;
+}
+
   @keyframes pbarfill {
     0% { width: 0%; }
     10% { width: 15%; } 
@@ -74,9 +85,9 @@ body {
     50% { width: 50%; }
     59.999% { width: 58%; }
     60% { width: 60%; }
-    62.999% { width: 61%; }
-    63% { width: 63%; }
-    70% { width: 75%; }
+    66.999% { width: 61%; }
+    67% { width: 63%; }
+    74% { width: 75%; }
     98% { width: 78%; }
     100% { width: 100%; }
   }
@@ -86,10 +97,10 @@ body {
     49.999% { content: "Contestant-scan" }
     50% { content: "bombs" }
     59.999% { content: "spware" }
-    60% { content: "lubricant" }
-    62.999% { content: "E-Jimmy" }
-    63% { content: "cool-gifs" }
-    70% { content: "The Internet" }
+    60% { content: "lubricating chairs" }
+    66.999% { content: "E-Jimmy" } 
+    67% { content: "cool-gifs" }
+    74% { content: "The Internet" }
     98% { content: "a car" }
     100% { content: "a car" }
   }
@@ -99,13 +110,24 @@ body {
   }
   #mcolumns {
     display:grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
   }
   #rightside {
     text-align:right;
-    width: 25vw;
+    width: 23vw;
   }
-
+ #leftside {
+  }
+#dos {
+  font-family: 'Jimth', Georgia, serif;
+  letter-spacing: 2px;
+  color: #f89404; 
+  font-size: 20vw;
+  transform: translateY(-6.5%);
+}
+#realm {
+  text-indent:1vw;
+}
   .dpopup {
     width: 50vw;
     height: 80vh;
@@ -123,7 +145,7 @@ body {
     text-align: center;
     background-image: url("https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/stars3.png");
     background-position: top 0px left 0px;
-    border: 3px solid #660f33;
+    border: 3px solid #ffa82e;
     border-radius: 1rem;
     animation: popupbg 90s linear;
     animation-iteration-count: infinite;
@@ -132,7 +154,7 @@ body {
     width: 70%;
     aspect-ratio: 720/1080;
     max-width: 90%;
-    max-height: 80vh;
+    max-height: 70vh;
   }
   
   @keyframes popupbg {
@@ -167,9 +189,12 @@ body {
   }
   #nametag {
     font-size: 2.8vw;
-    color: red;
+    color: #f89404;
   }
-
+  #mnametag {
+    font-size: 2vw;
+    color: #f89404;
+  }
 
 #popuptext {
     font-size: calc(6vh/3);
@@ -209,7 +234,7 @@ a:active {
   text-decoration-line: underline;
 }
 .seen {
-  border-color: #59293d;
+  border-color: #bd7f2a;
 }
 
 #cgifsub {
@@ -278,67 +303,63 @@ a:active {
       }
     }
   .button-20 {
-    appearance: button;
-    background-color: #660f33; /* primary button color */
-    background-image: linear-gradient(180deg, rgba(255, 248, 242, 0.15), rgba(255, 248, 242, 0));
-    border: 1px solid #660f33;
-    border-radius: 1rem;
-    box-shadow: rgba(255, 248, 242, 0.15) 0 1px 0 inset, rgba(20, 20, 20, 0.075) 0 1px 1px;
-    box-sizing: border-box;
-    color: #fff8f2; /* text color */
-    cursor: pointer;
-    display: inline-block;
-    font-family: Inter, sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0;
-    padding: .5rem 1rem;
-    text-align: center;
-    text-transform: none;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-  }
-  
-  .button-20:focus:not(:focus-visible),
-  .button-20:focus {
-    outline: 0;
-  }
-  
-  .button-20:hover {
-    background-color: #141414;
-    border-color: #141414;
-  }
-  
-  .button-20:focus {s
-    background-color: #141414;
-    border-color: #141414;
-    box-shadow: rgba(255, 248, 242, 0.2) 0 1px 0 inset, rgba(20, 20, 20, 0.1) 0 1px 1px, rgba(224, 186, 139, 0.4) 0 0 0 0.2rem;
-  }
-  
-  .button-20:active {
-    background-color: #1a1a1a;
-    background-image: none;
-    border-color: #1a1a1a;
-    box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset;
-  }
-  
-  .button-20:active:focus {
-    box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset, rgba(224, 186, 139, 0.4) 0 0 0 0.2rem;
-  } 
-  
-  .button-20:disabled {
-    background-image: none;
-    box-shadow: none;
-    opacity: 0.65;
-    pointer-events: none;
-  }
-  }
-.god {
-  height: 10vh;
+  appearance: button;
+  background-color: #f89404; /* updated primary color */
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  border: 1px solid #f89404;
+  border-radius: 1rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(20, 20, 20, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #331a00; /* text color */
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-20:focus:not(:focus-visible),
+.button-20:focus {
+  outline: 0;
+}
+
+.button-20:hover {
+  background-color: #d67f03;
+  border-color: #d67f03;
+}
+
+.button-20:focus {
+  background-color: #d67f03;
+  border-color: #d67f03;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 inset, rgba(20, 20, 20, 0.1) 0 1px 1px, rgba(248, 148, 4, 0.5) 0 0 0 0.2rem;
+}
+
+.button-20:active {
+  background-color: #b36a03;
+  background-image: none;
+  border-color: #b36a03;
+  box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset;
+}
+
+.button-20:active:focus {
+  box-shadow: rgba(20, 20, 20, 0.15) 0 3px 5px inset, rgba(248, 148, 4, 0.4) 0 0 0 0.2rem;
+}
+
+.button-20:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: 0.65;
+  pointer-events: none;
 }
 </style>
 
@@ -346,271 +367,299 @@ a:active {
 <!DOCTYPE html>
 <html>
 <head>
-<title> 2 JIMTHONY 2 REALMS </title>
+  <title> 2 JIMTHONY 2 REALMS </title>
 </head>
+
 <body>
 
-<div hidden id="dpopup" class="window dpopup">
-  <span id="popuptext"> WELCOME, KANE LANDERS </span><br>
-  <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
-  <button onclick="closePopup()" class="button-20 dbutton">close</button>
-</div >
-<div hidden id="cpopup" class="window">
-      <span id="cpopuptext"></span><br>
-      <div id="cpopupcols">
-        <div id="cpopupleftcol">
-          <video autoplay disablePictureInPicture loop muted inline id="cspinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
-          <span id="cgifsub"></span> <br> <br> <span id="cjid"></span>
-        </div>
-        <div id="cpopuprightcol">
-          <span id=cstats></span>
+  <div hidden id="dpopup" class="window dpopup">
+    <span id="popuptext"> WELCOME, KANE LANDERS </span><br>
+    <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
+    <button onclick="closePopup()" class="button-20 dbutton">close</button>
+  </div>
+  <div hidden id="cpopup" class="window">
+    <span id="cpopuptext"></span><br>
+    <div id="cpopupcols">
+      <div id="cpopupleftcol">
+        <video autoplay disablePictureInPicture loop muted inline id="cspinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
+        <span id="cgifsub"></span> <br> <br> <span id="cjid"></span>
+      </div>
+      <div id="cpopuprightcol">
+        <span id=cstats></span>
+      </div>
+    </div>
+    <button onclick="closeCPopup()" class="button-20">close</button>
+  </div>
+  <div hidden id="content">
+    <div id="mcolumns">
+      <div id="dos"> 2 </div>
+      <div id="leftside">
+        <h1> JIMTHONY <br> </h1>
+        <h1 id="realm"> REALMS </h1>
+      </div>
+      <div id="rightside">
+        <div id="rcontestant" class="window" onclick="contestantPopup('Kane')">
+          <span id=mnametag>KANE LANDERS</span> <br><br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
+          <span class="flashy"> CLICK ON ME </span>
+
         </div>
       </div>
-      <button onclick="closeCPopup()" class="button-20">close</button>
     </div>
-<div hidden id="content">
-  <div id="mcolumns">
-    <div>
-      <h1> 2 JIMTHONY <br> 2 REALMS </h1>
+    <div id="info">
+      <h3>WHEN IS THIS EVENT</h3>
+      2nd OF AUGUST <br>
+      MARK THE DAY <br>
+      Arrive at 12 AM <br>
+      FINISHING BY 6 (hopefully)
+      <h3>WHERE?</h3>
+      - 40 ARABA STREET <br>
+      - ENTER THROUGH THE MAIN DOOR (stairs) AND YOU WILL FIND THE WAITING AREA <br>
+      - MAKE YOUR FINAL PREPARATIONS BEFORE YOU ARE TRANSPORTED TO MY REALM
+      <h3>WHAT TO EXPECT</h3>
+      - A chaotic game show (In teams of 3), questions, challenges, minigames, etc <br>
+      - Cameo appearances! <br>
+      - A Jimthony-type event <br>
+      - Betrayal?!?! <br>
+
+      <span id="racism"> <br> - Casual racism (competitive accepted)</span>
+      <h3>IMPORTNAT INFO</h3>
+      - The event WILL be recorded and posted online (if you’re cool with that!) <br>
+      - Wear clothes you look good in but don’t mind getting fucked up <br>
+      - Physical challenges <br>
+      - Food provided (get breakfast before, though!) <br>
+      <span id="sidecomment"> <br>
+        Will this game be fair? <br>
+        MAYBE IDK <br>
+        Will it be fun? <br>
+        MOST DEFINITELY
+      </span> <br><br>
+      <button onclick="switchTab()" class="button-20">YOUR NEXT STEPS</button>
     </div>
-    <div id="rightside">
-      <div id="rcontestant" class="window" onclick="contestantPopup('Kane')">
-      <span id=nametag>KANE LANDERS</span> <br><br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"></video> <br>
-        CLICK ON ME
-        
+    <diiv hidden id="wtd">
+      <h3>YOUR NEXT STEPS</h3>
+      - Assemble your team <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Find each contestant below, click on them for more info <br>
+      - Join the group chat <br>
+      - Announce your team (no need to have a name worked out yet!) <br>
+      - Follow the next steps in the group chat! <br>
+      - Arrive at 12AM on the day! <span class="flashy">( DO NOT BE LATE )</span> <br>
+      <div id="contestants">
+        <div id="wArcher" class="window cpuck" onclick="contestantPopup('Archer')">
+          <span id=nametag>Minortaur07</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm"> <br>
+
+        </div>
+        <div id="wDaniel" class="window cpuck" onclick="contestantPopup('Daniel')">
+          <span id=nametag>Acidodan01</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Daniel.webm"> <br>
+
+        </div>
+        <div id="wFinn" class="window cpuck" onclick="contestantPopup('Finn')">
+          <span id=nametag>timetoad2002</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Finn.webm"> <br>
+
+        </div>
+        <div id="wGabe" class="window cpuck" onclick="contestantPopup('Gabe')">
+          <span id=nametag>Gabriel_OTS_02</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gabe.webm"> <br>
+
+        </div>
+        <div id="wGryffyn" class="window cpuck" onclick="contestantPopup('Gryffyn')">
+          <span id=nametag>Lisan-Al-Gaib06</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gryffyn.webm"> <br>
+
+        </div>
+        <div hidden id="wKane" class="window cpuck" onclick="contestantPopup('Kane')">
+          <span id=nametag>DaddyLanders03</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> <br>
+
+        </div>
+        <div id="wMichael" class="window cpuck" onclick="contestantPopup('Michael')">
+          <span id=nametag>xX_BigCheese_Xx</span>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Michael.webm"> <br>
+
+        </div>
+        <div id="wNoah" class="window cpuck" onclick="contestantPopup('Noah')">
+          <span id=nametag>Noerr2k02</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Noah.webm"> <br>
+
+        </div>
+        <div id="wTandin" class="window cpuck" onclick="contestantPopup('Tandin')">
+          <span id=nametag>TheChophelator06</span> <br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Tandin.webm"> <br>
+
+        </div>
+        <div id="wWren" class="window cpuck" onclick="contestantPopup('Wren')">
+          <span id=nametag>Wren_da_b1g_fi5h</span> <br><br>
+          <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Wren.webm"> <br>
+
+        </div>
       </div>
+      <img class="skelly" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/coolest-thing-to-grace-earth.gif">
+      <img class="jimthonycode" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/cropped%20jimthony.PNG" alt="Image 1">
+      <img class="flippa skelly" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/coolest-thing-to-grace-earth.gif"> <br>
+      <button onclick="switchTab()" class="button-20">Back</button>
+  </div>
+  </div>
+  <div id="pbarpapa">Loading: <span id="loadTxt"></span>
+    <div id="pbar">
+      <div id="pbarfill"> </div>
     </div>
   </div>
-  <div id="info"> 
-    <h3>WHAT TO EXPECT</h3>
-   - A chaotic game show (In teams of 2), questions, challenges, minigames, etc <br>
-   - Cameo appearances! <br>
-   - A Jimthony-type event <br>
-   - Betrayal?!?! <br>
-    <h3>WHEN IS THIS EVENT</h3>
-  2nd OF AUGUST <br>
-  MARK THE DAY <br>
-  Arrive at 11 AM <br>
-  FINISHING BY 5 (hopefully)
-  <h3>WHERE?</h3>
-   - 40 ARABA STREET <br>
-   - ENTER THROUGH THE MAIN DOOR AND YOU WILL FIND THE WAITING AREA <br>
-   - MAKE YOUR FINAL PREPARATIONS BEFORE YOU ARE TRANSPORTED TO MY REALM
-   <span id="racism"> <br> - Casual racism (competitive accepted)</span>
-  <h3>IMPORTNAT INFO</h3>
-   - The event WILL be recorded and posted online (if you’re cool with that!) <br>
-   - Wear clothes you look good in but don’t mind getting fucked up <br>
-   - Physical challenges <br>
-   - Food provided (get breakfast before, though!) <br>
-   - Bring your invite! <br>
-  <span id="sidecomment"> <br> 
-    Will this game be fair? <br>
-    MAYBE IDK <br>
-    Will it be fun? <br>
-    MOST DEFINITELY
-  </span> <br><br>
-  <button onclick="switchTab()"  class="button-20">YOUR NEXT STEPS</button>
-    </div>
-  <diiv hidden id="wtd">
-    <h3>YOUR NEXT STEPS</h3>
-   - Find your two team mates <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;Find each contestant below, click on them for more info <br>
-   - Join the group chat <br>
-   - Announce your team (no need to have a name worked out yet!) <br>
-   - Follow the next steps in the group chat! <br>
-   - Arrive at 11AM on the day! <span class="flashy" >( DO NOT BE LATE )</span> <br>
-    <div id="contestants"> 
-      <div id="wArcher" class="window cpuck" onclick="contestantPopup('Archer')">
-      <span id=nametag>Minortaur07</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm"> <br>
-        
-        
-      </div>
-      <div id="wDaniel" class="window cpuck" onclick="contestantPopup('Daniel')">
-      <span id=nametag>Acidodan01</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Daniel.webm"> <br>
-        
-        
-      </div>
-      <div id="wFinn" class="window cpuck" onclick="contestantPopup('Finn')">
-      <span id=nametag>timetoad2002</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Finn.webm"> <br>
-        
-        
-      </div>
-      <div id="wGabe" class="window cpuck" onclick="contestantPopup('Gabe')">
-      <span id=nametag>Gabriel_OTS_02</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gabe.webm"> <br>
-        
-        
-      </div>
-      <div id="wGryffyn" class="window cpuck" onclick="contestantPopup('Gryffyn')">
-      <span id=nametag>Lisan-Al-Gaib06</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gryffyn.webm"> <br>
-        
-        
-      </div>
-      <div hidden id="wKane" class="window cpuck" onclick="contestantPopup('Kane')">
-      <span id=nametag>DaddyLanders03</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm"> <br>
-        
-        
-      </div>
-      <div id="wMichael" class="window cpuck" onclick="contestantPopup('Michael')">
-      <span id=nametag>xX_BigCheese_Xx</span> 
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Michael.webm"> <br>
-        
-      </div>
-      <div id="wNoah" class="window cpuck" onclick="contestantPopup('Noah')">
-      <span id=nametag>Noerr2k02</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Noah.webm"> <br>
-        
-      </div>
-      <div id="wTandin" class="window cpuck" onclick="contestantPopup('Tandin')">
-      <span id=nametag>TheChophelator06</span> <br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Tandin.webm"> <br>
-        
-      </div>
-      <div id="wWren" class="window cpuck" onclick="contestantPopup('Wren')">
-      <span id=nametag>Wren_da_b1g_fi5h</span> <br><br>
-      <video autoplay disablePictureInPicture loop muted inline class="spinnygif" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Wren.webm"> <br>
-        
-      </div>
-   </div>
-    <button onclick="switchTab()"  class="button-20">Back</button>
-    <img class="god" src="https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/webgraphics/coolest-thing-to-grace-earth.gif">
-  </div>
-</div>
-<div id="pbarpapa">Loading: <span id="loadTxt"></span> <div id="pbar"> <div id="pbarfill"> </div></div> </div>
-</body>
 </html>
 
 <script>
   // JavaScript
-  document.getElementById("loadTxt").addEventListener("animationend", myFunction); 
+document.getElementById("loadTxt").addEventListener("animationend", myFunction);
 
 
 var contestants = {
-  "Archer": {
-    "name"      : "ARCHER TOMLINSON",
-    "username"  : "Minortaur07",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm",
-    "JID"       : "5645760",
-    "stats"     : "<span class='good'> 🡅 </span> Lean and nimble <br/><span class='good'> 🡅 </span> Strong anime knowledge <br/><span class='ass'> 🡇 </span> Can not legally drink"
+  Archer: {
+    name: "ARCHER TOMLINSON",
+    username: "Minortaur07",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Archer.webm",
+    JID: "5645760",
+    stats:
+      "<span class='good'> 🡅 </span> Lean and nimble <br/><span class='good'> 🡅 </span> Strong anime knowledge <br/><span class='ass'> 🡇 </span> Can not legally drink"
   },
-  "Daniel": {
-    "name"      : "DANIEL CERRITELLI",
-    "username"  : "Acidodan01",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Daniel.webm",
-    "JID"       : "0110010",
-    "stats"     : "<span class='good'> 🡅 </span> Expansive knowledge of comic book media <br/><span class='good'> 🡅 </span> Photography skills <br/><span class='ait'> ━ </span> Italian <br/><span class='ass'> 🡇 </span> Vertically challenged"
+  Daniel: {
+    name: "DANIEL CERRITELLI",
+    username: "Acidodan01",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Daniel.webm",
+    JID: "0110010",
+    stats:
+      "<span class='good'> 🡅 </span> Expansive knowledge of comic book media <br/><span class='good'> 🡅 </span> Photography skills <br/><span class='ait'> ━ </span> Italian <br/><span class='ass'> 🡇 </span> Small build"
   },
-  "Finn": {
-    "name"      : "FINN MCLUSKY",
-    "username"  : "timetoad2002",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Finn.webm",
-    "JID"       : "0963046",
-    "stats"     : "<span class='good'> 🡅 </span> Skilled software engineer <br/><span class='good'> 🡅 </span> Encompassing knowledge of all things frogs <br/><span class='ass'> 🡇 </span> Jeff Bezos shill"
+  Finn: {
+    name: "FINN MCLUSKY",
+    username: "timetoad2002",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Finn.webm",
+    JID: "0963046",
+    stats:
+      "<span class='good'> 🡅 </span> Skilled software engineer <br/><span class='good'> 🡅 </span> Encompassing knowledge of all things frogs <br/><span class='ass'> 🡇 </span> Jeff Bezos shill"
   },
-  "Gabe": {
-    "name"      : "GABRIEL LEGARBES",
-    "username"  : "Gabriel_OTS_02",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gabe.webm",
-    "JID"       : "3741656",
-    "stats"     : "<span class='good'> 🡅 </span> Unrivaled anime expertise <br/><span class='good'> 🡅 </span> JB Hi-fi employee discount <br/><span class='good'> 🡅 </span> Filipino racial feats <br/><span class='ass'> 🡇 </span> Spends all money at conventions"
+  Gabe: {
+    name: "GABRIEL LEGARBES",
+    username: "Gabriel_OTS_02",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gabe.webm",
+    JID: "3741656",
+    stats:
+      "<span class='good'> 🡅 </span> Unrivaled anime expertise <br/><span class='good'> 🡅 </span> JB Hi-fi employee discount <br/><span class='good'> 🡅 </span> Filipino racial feats <br/><span class='ass'> 🡇 </span> Spends all money at conventions"
   },
-  "Gryffyn": {
-    "name"      : "GRYFFYN UNDERWOOD",
-    "username"  : "Lisan-Al-Gaib06",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gryffyn.webm",
-    "JID"       : "8831565",
-    "stats"     : "<span class='good'> 🡅 </span> Strong knowledge of music and film <br/><span class='good'> 🡅 </span> Skilled dancer <br/><span class='ait'> ━ </span> Easily throwable <br/><span class='ass'> 🡇 </span> Prone to crash outs"
+  Gryffyn: {
+    name: "GRYFFYN UNDERWOOD",
+    username: "Lisan-Al-Gaib06",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Gryffyn.webm",
+    JID: "8831565",
+    stats:
+      "<span class='good'> 🡅 </span> Strong knowledge of music and film <br/><span class='good'> 🡅 </span> Skilled dancer <br/><span class='ait'> ━ </span> Easily throwable <br/><span class='ass'> 🡇 </span> Prone to crash outs"
   },
-  "Kane": {
-    "name"      : "KANE LANDERS",
-    "username"  : "DaddyLanders03",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm",
-    "JID"       : "7688715",
-    "stats"     : "<span class='good'> 🡅 </span> Expertise in animal handling <br/><span class='good'> 🡅 </span> Highly skilled in the art of throwing it back <br/><span class='ass'> 🡇 </span> 4th grade reading level"
+  Kane: {
+    name: "KANE LANDERS",
+    username: "DaddyLanders03",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Kane.webm",
+    JID: "7688715",
+    stats:
+      "<span class='good'> 🡅 </span> Expertise in animal handling <br/><span class='good'> 🡅 </span> Highly skilled in the art of throwing it back <br/><span class='ass'> 🡇 </span> 4th grade reading level"
   },
-  "Michael": {
-    "name"      : "MICHAEL CHEESEMAN",
-    "username"  : "xX_BigCheese-02_Xx",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Michael.webm",
-    "JID"       : "4928186",
-    "stats"     : "<span class='good'> 🡅 </span> Karate black belt <br/><span class='good'> 🡅 </span> Built like a WWE wrestler <br/><span class='ass'> 🡇 </span> can not remember someone's name if his life depended on it"
+  Michael: {
+    name: "MICHAEL CHEESEMAN",
+    username: "xX_BigCheese-02_Xx",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Michael.webm",
+    JID: "4928186",
+    stats:
+      "<span class='good'> 🡅 </span> Karate black belt <br/><span class='good'> 🡅 </span> Built like a WWE wrestler <br/><span class='ass'> 🡇 </span> can not remember someone's name if his life depended on it"
   },
-  "Noah": {
-    "name"      : "NOAH MCAULIFFE",
-    "username"  : "Noerr2k02",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Noah.webm",
-    "JID"       : "1156349",
-    "stats"     : "<span class='good'> 🡅 </span> 100kg bench press <br/><span class='good'> 🡅 </span> Encyclopedic knowledge of warhammer lore <br/><span class='ass'> 🡇 </span> Lactose intolerance"
+  Noah: {
+    name: "NOAH MCAULIFFE",
+    username: "Noerr2k02",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Noah.webm",
+    JID: "1156349",
+    stats:
+      "<span class='good'> 🡅 </span> 100kg bench press <br/><span class='good'> 🡅 </span> Encyclopedic knowledge of warhammer lore <br/><span class='ass'> 🡇 </span> Lactose intolerance"
   },
-  "Tandin": {
-    "name"      : "TANDIN CHOPHEL",
-    "username"  : "TheChophelator06",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Tandin.webm",
-    "JID"       : "9110257",
-    "stats"     : "<span class='good'> 🡅 </span> Calisthenic prowess <br/><span class='good'> 🡅 </span> Connections in high places (Inka) <br/><span class='ass'> 🡇 </span> Not a citizen"
+  Tandin: {
+    name: "TANDIN CHOPHEL",
+    username: "TheChophelator06",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Tandin.webm",
+    JID: "9110257",
+    stats:
+      "<span class='good'> 🡅 </span> Calisthenic prowess <br/><span class='good'> 🡅 </span> Connections in high places (Inka) <br/><span class='ass'> 🡇 </span> Not a citizen"
   },
-  "Wren": {
-    "name"      : "WREN BOULTON",
-    "username"  : "Wren_da_b1g_fi5h",
-    "gif"       : "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Wren.webm",
-    "JID"       : "4684411",
-    "stats"     : "<span class='good'> 🡅 </span> Juggling capabilities <br/><span class='good'> 🡅 </span> DEI points for being trans <br/><span class='ass'> 🡇 </span> Dwarf physiognomy"
+  Wren: {
+    name: "WREN BOULTON",
+    username: "Wren_da_b1g_fi5h",
+    gif:
+      "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/spinning dudes/Wren.webm",
+    JID: "4684411",
+    stats:
+      "<span class='good'> 🡅 </span> Juggling capabilities <br/><span class='good'> 🡅 </span> DEI points for being trans <br/><span class='ass'> 🡇 </span> Dwarf physiognomy"
   }
-}
-  var audio = new Audio('https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/audio/welcomes/welcome kane landers.wav');
-  function myFunction() {
-    const element = document.getElementById('pbarpapa');
-    setTimeout(function() {openPopup(); element.hidden = true; audio.play();}, 1000);
-    
-  }
-  
-  function openPopup() {
-    const element = document.getElementById('dpopup');
-    const element1 = document.getElementById('content');
-    element.hidden = false;
-    element1.style.display = "none";
-  }
-  
-  function closePopup() {
-    const element = document.getElementById('dpopup');
-    const element1 = document.getElementById('content');
+};
+var audio = new Audio(
+  "https://raw.githubusercontent.com/Jimarkus/Jimthony/refs/heads/main/res/audio/welcomes/welcome kane landers.wav"
+);
+function myFunction() {
+  const element = document.getElementById("pbarpapa");
+  setTimeout(function () {
+    openPopup();
     element.hidden = true;
-    element1.style.display = "block";
-  }
+    audio.play();
+  }, 1000);
+}
+
+function openPopup() {
+  const element = document.getElementById("dpopup");
+  const element1 = document.getElementById("content");
+  element.hidden = false;
+  element1.style.display = "none";
+}
+
+function closePopup() {
+  const element = document.getElementById("dpopup");
+  const element1 = document.getElementById("content");
+  element.hidden = true;
+  element1.style.display = "block";
+}
 function switchTab() {
-    const element = document.getElementById('mcolumns');
-    const element1 = document.getElementById('wtd');
-    const element2 = document.getElementById('info');
-    console.log(element1.style.display);
-    element.style.display = (element.style.display == "none" ? "grid" : "none");
-    element1.style.display = (element.style.display == "none" ? "block" : "none");
-    element2.style.display = (element.style.display == "none" ? "none" : "block");
-    window.scrollTo(0, 0);
-  }
+  const element = document.getElementById("mcolumns");
+  const element1 = document.getElementById("wtd");
+  const element2 = document.getElementById("info");
+  console.log(element1.style.display);
+  element.style.display = element.style.display == "none" ? "grid" : "none";
+  element1.style.display = element.style.display == "none" ? "block" : "none";
+  element2.style.display = element.style.display == "none" ? "none" : "block";
+  window.scrollTo(0, 0);
+}
 
 function contestantPopup(user) {
-    const cpopup = document.getElementById('cpopup');
-    const cname = document.getElementById('cpopuptext');
-    const cgif = document.getElementById('cspinnygif');
-    const cgifsub = document.getElementById('cgifsub');
-    const cjid = document.getElementById('cjid');
-    const cstats = document.getElementById('cstats');
-    document.getElementById('w'+user).classList.add("seen");
-    cname.textContent=contestants[user]["name"];
-    cgif.src=contestants[user]["gif"];
-    cstats.innerHTML=contestants[user]["stats"];
-    cgifsub.innerHTML=contestants[user]["username"];
-    cjid.innerHTML="Jimthony ID: "+contestants[user]["JID"];
-    cpopup.style.display = "block";
-  }
+  const cpopup = document.getElementById("cpopup");
+  const cname = document.getElementById("cpopuptext");
+  const cgif = document.getElementById("cspinnygif");
+  const cgifsub = document.getElementById("cgifsub");
+  const cjid = document.getElementById("cjid");
+  const cstats = document.getElementById("cstats");
+  document.getElementById("w" + user).classList.add("seen");
+  cname.textContent = contestants[user]["name"];
+  cgif.src = contestants[user]["gif"];
+  cstats.innerHTML = contestants[user]["stats"];
+  cgifsub.innerHTML = contestants[user]["username"];
+  cjid.innerHTML = "Jimthony ID: " + contestants[user]["JID"];
+  cpopup.style.display = "block";
+}
 function closeCPopup() {
-    const element = document.getElementById('cpopup');
-    element.style.display = "none";
-  }
+  const element = document.getElementById("cpopup");
+  element.style.display = "none";
+}
+
 </script>
